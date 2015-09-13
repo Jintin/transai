@@ -1,0 +1,8 @@
+<resources>
+	<string name="test_name">Hello world</string>
+	<string name="android">en android</string>
+  <string name="room_description">Please enter a room name. Room names are shared with everyone, so think
+        of something unique and send it to a friend.
+
+			</string>
+</resources>

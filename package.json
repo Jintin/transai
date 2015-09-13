@@ -1,0 +1,33 @@
+{
+  "name": "transai",
+  "version": "1.0.0",
+  "description": "transai is a command line tool to help you do Android and iOS translation.",
+  "main": "index.js",
+  "bin": "bin/transai",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jintin/transai.git"
+  },
+  "keywords": [
+    "android",
+    "ios",
+    "string",
+    "translate"
+  ],
+  "author": "Jintin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jintin/transai/issues"
+  },
+  "homepage": "https://github.com/Jintin/transai#readme",
+  "dependencies": {
+    "csvtojson": "^0.4.2",
+    "i18n-strings-files": "0.0.7",
+    "nomnom": "^1.8.1",
+    "to-csv": "jwerle/to-csv",
+    "xml2js": "^0.4.12"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "transai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "transai is a command line tool to help you do Android and iOS translation.",
   "main": "index.js",
   "bin": "bin/transai",

@@ -1,6 +1,6 @@
 {
   "name": "transai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "transai is a command line tool to help you do Android and iOS translation.",
   "main": "index.js",
   "bin": "bin/transai",
@@ -18,7 +18,7 @@
     "translate"
   ],
   "author": "Jintin",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jintin/transai/issues"
   },

@@ -9,7 +9,7 @@ You can extract string files to csv format, or generate string files from csv fi
 
 Just install it by npm:
 
-    $ npm install transai -g
+    $ sudo npm install transai -g
 
 ## Usage
 

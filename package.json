@@ -1,7 +1,7 @@
 {
   "name": "transai",
-  "version": "1.0.2",
-  "description": "transai is a command line tool to help you do Android and iOS translation.",
+  "version": "1.1.0",
+  "description": "transai is a localization tool on Android and iOS, convert string files to csv format back and forth.",
   "main": "index.js",
   "bin": "bin/transai",
   "scripts": {

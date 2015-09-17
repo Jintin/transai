@@ -35,6 +35,7 @@ function load(opts) {
     });
   } else {
     console.log(array);
+    console.log('csv file path not specified');
   }
 }
 

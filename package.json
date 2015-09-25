@@ -1,6 +1,6 @@
 {
   "name": "transai",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "transai is a localization tool on Android and iOS, convert string files to csv format back and forth.",
   "main": "index.js",
   "bin": "bin/transai",
@@ -15,7 +15,8 @@
     "android",
     "ios",
     "string",
-    "translate"
+    "translate",
+    "localization"
   ],
   "author": "Jintin",
   "license": "MIT",
@@ -24,10 +25,7 @@
   },
   "homepage": "https://github.com/Jintin/transai#readme",
   "dependencies": {
-    "csvtojson": "^0.4.2",
-    "i18n-strings-files": "0.0.7",
     "nomnom": "^1.8.1",
-    "to-csv": "jwerle/to-csv",
     "xml2js": "^0.4.12"
   }
 }

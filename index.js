@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-ios = require('./lib/ios.js');
-android = require('./lib/android.js');
-fs = require('fs');
-jsontocsv = require('to-csv');
-csvtojson = require("csvtojson");
+var ios = require('./lib/ios.js');
+var android = require('./lib/android.js');
+var csv = require('./lib/csv.js');
 
 module.exports = {
   load: load,
@@ -13,26 +11,26 @@ module.exports = {
 
 function load(opts) {
   var data = {};
+
+  //load
   if (opts.ios) {
-    getData(ios, data, opts.ios, opts.from_ios, opts.to_ios);
+    getData(ios, opts.ios, opts.from_ios, opts.to_ios);
   }
   if (opts.android) {
-    getData(android, data, opts.android, opts.from_android, opts.to_android);
-  }
-  var array = [];
-  for (key in data) {
-    array.push({
-      from: key,
-      to: data[key]
-    });
+    getData(android, opts.android, opts.from_android, opts.to_android);
   }
 
+  function getData(os, dir, from, to) {
+    var fromData = os.getData(dir, from);
+    var toData = os.getData(dir, to);
+    for (key in fromData) {
+      data[fromData[key]] = toData[key];
+    }
+  }
+
+  //save data
   if (opts.csv) {
-    fs.writeFile(opts.csv, jsontocsv(array).replace('\r', '\n'), function(err) {
-      if (err) {
-        return console.log(err);
-      }
-    });
+    var value = csv.save(opts.csv, data);
   } else {
     console.log(array);
     console.log('csv file path not specified');
@@ -40,35 +38,20 @@ function load(opts) {
 }
 
 function save(opts) {
-  if (opts.csv) {
-    var fileStream = fs.createReadStream(opts.csv);
-    var converter = new csvtojson.Converter({
-      constructResult: true
-    });
-    converter.on("end_parsed", function(array) {
-      var data = {};
+  var data = {};
 
-      array.forEach(function(item) {
-        data[item['from']] = item['to'];
-      });
-
-      if (opts.ios) {
-        ios.setData(data, opts.ios, opts.from_ios, opts.to_ios);
-      }
-      if (opts.android) {
-        android.setData(data, opts.android, opts.from_android, opts.to_android);
-      }
-    });
-
-    fileStream.pipe(converter);
+  // load
+  var array = csv.load(opts.csv);
+  for (var i = 0; i < array.length; i++) {
+    var line = array[i];
+    data[line[0]] = line[1];
   }
-}
 
-function getData(os, data, dir, from, to) {
-  var fromData = os.getData(dir, from);
-  var toData = os.getData(dir, to);
-  for (key in fromData) {
-    data[fromData[key]] = toData[key];
+  //save
+  if (opts.ios) {
+    ios.setData(data, opts.ios, opts.from_ios, opts.to_ios);
   }
-  return data;
+  if (opts.android) {
+    android.setData(data, opts.android, opts.from_android, opts.to_android);
+  }
 }

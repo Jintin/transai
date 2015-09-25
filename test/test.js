@@ -1,29 +1,35 @@
 #!/usr/bin/env node
 
-sys = require('sys');
-exec = require('child_process').execSync;
-fs = require('fs');
+var sys = require('sys');
+var fs = require('fs');
+var assert = require('assert');
+var execSync = require('child_process').execSync;
+
+execSync('node bin/transai load -a . -i . --from en --to de -c test/load.csv', puts);
+execSync('node bin/transai save -a . -i . --from en --to xx -c test/load.csv', puts);
+
+compareFolder('./test/android/values-de', './test/android/values-xx');
+compareFolder('./test/ios/de.lproj', './test/ios/xx.lproj');
 
 function puts(error, stdout, stderr) {
   console.log(stdout);
+  console.log(stderr);
+  console.log(error);
 }
 
-exec('node bin/transai load -a . -i . --from en --to de -c test/load.csv', puts);
-exec('node bin/transai save -a . -i . --from en --to xx -c test/load.csv', puts);
+function compareFolder(path1, path2) {
+  fs.readdirSync(path1).forEach(function(file) {
+    var file1 = path1 + '/' + file;
+    var file2 = path2 + '/' + file;
+    compare(file1, file2);
+  });
+}
 
-compare('./test/android/values-de/strings.xml', './test/android/values-xx/strings.xml')
-compare('./test/ios/de.lproj/TestViewController.strings', './test/ios/xx.lproj/TestViewController.strings')
-compare('./test/ios/de.lproj/Test2ViewController.strings', './test/ios/xx.lproj/Test2ViewController.strings')
+function compare(file1, file2) {
+  var value1 = fs.readFileSync(file1).toString();
+  var value2 = fs.readFileSync(file2).toString();
 
-function compare(oldpath, newpath) {
-  var oldvalue = fs.readFileSync(oldpath).toString();
-  var newvalue = fs.readFileSync(newpath).toString();
-
-  console.log(oldvalue);
-  console.log(newvalue);
-  if (oldvalue == newvalue) {
-    console.log('success');
-  } else {
-    console.log('fail');
-  }
+  console.log(value1);
+  console.log(value2);
+  assert.equal(value1, value2, 'result not equal');
 }

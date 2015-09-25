@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-transai = require('../index.js');
-nomnom = require('nomnom');
+var nomnom = require('nomnom');
+var transai = require('../index.js');
 
 var command_opts = {
   ios: {
@@ -45,7 +45,7 @@ nomnom.option('version', {
   help: 'print version',
   callback: function() {
     var config = require('../package.json');
-    return 'transai ' + config.version + ' is a string management tool in Node.js\nvisit https://github.com/Jintin/transai for more information';
+    return 'v' + config.version + '\ntransai is a localization tool on Android and iOS\nvisit https://github.com/Jintin/transai for more information';
   }
 })
 
@@ -60,11 +60,14 @@ nomnom.command('load')
 nomnom.command('save')
   .options(command_opts)
   .callback(function(opts) {
+    if (!opts.csv) {
+      console.error('csv file not specified');
+      return;
+    }
     setLang(opts);
     transai.save(opts);
   })
   .help('import string file');
-
 
 nomnom.parse();
 
@@ -78,28 +81,24 @@ function setLang(opts) {
     opts.to_ios = opts.to;
   }
   var error = false;
-  if (opts.ios == null && opts.android == null) {
+  if (!opts.ios && !opts.android) {
     error = true;
     console.error('os not specified');
   }
   if (opts.ios) {
-    if (opts.from_ios == null) {
+    if (!opts.from_ios) {
       opts.from_ios = '';
     }
-    if (opts.to_ios == null) {
+    if (!opts.to_ios) {
       error = true;
       console.error('ios to_lang not specified');
     }
   }
   if (opts.android) {
-    if (opts.from_android == null) {
+    if (!opts.from_android || opts.from_android == 'default') {
       opts.from_android = '';
     }
-    if (opts.from_android == 'default') {
-      opts.from_android = '';
-    }
-
-    if (opts.to_android == null) {
+    if (!opts.to_android) {
       error = true;
       console.error('android to lang not specified');
     }

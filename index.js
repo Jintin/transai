@@ -30,7 +30,7 @@ function load(opts) {
 
   //save data
   if (opts.csv) {
-    var value = csv.save(opts.csv, data);
+    csv.save(opts.csv, data);
   } else {
     console.log(array);
     console.log('csv file path not specified');

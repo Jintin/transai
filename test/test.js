@@ -5,11 +5,12 @@ var fs = require('fs');
 var assert = require('assert');
 var execSync = require('child_process').execSync;
 
-execSync('node bin/transai load -a . -i . --from en --to de -c test/load.csv', puts);
-execSync('node bin/transai save -a . -i . --from en --to xx -c test/load.csv', puts);
+execSync('node bin/transai load -a . -i . --from en --to de -c test/strings.csv', puts);
+execSync('node bin/transai save -a . -i . --from en --to xx -c test/strings.csv', puts);
 
 compareFolder('./test/android/values-de', './test/android/values-xx');
 compareFolder('./test/ios/de.lproj', './test/ios/xx.lproj');
+compare('./test/test.csv', './test/strings.csv');
 
 function puts(error, stdout, stderr) {
   console.log(stdout);

@@ -9,7 +9,7 @@ You can extract string files to csv format, or generate string files from csv fi
 
 Just install it by npm:
 
-    $ sudo npm install transai -g
+      $ sudo npm install transai -g
 
 ## Usage
 
@@ -33,21 +33,21 @@ Options:
   -c, --csv                 # csv file
 
 ```
-example:
+### Example:
 
-`transai load -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
+`    $ transai load -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
 
 extract strings to strings.csv under ~/android and ~/ios folder
 
-`transai load -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
+`    $ transai load -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
 
 extract strings base on android default lang and ios en lang to android zh_tw lang and ios zh-Hant lang
 
-`transai save -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
+`    $ transai save -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
 
 generate string files from strings.csv under ~/android and ~/ios folder
 
-`transai save -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
+`    $ transai save -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
 
 generate string files base on android default lang and ios en lang to android zh_tw lang and ios zh-Hant lang
 

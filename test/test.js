@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var sys = require('sys');
+var sys = require('util');
 var fs = require('fs');
 var assert = require('assert');
 var execSync = require('child_process').execSync;

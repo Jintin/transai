@@ -1,4 +1,6 @@
 <resources>
-	<string name="test_name">Hallo Wereld</string>
-	<string name="android">de android</string>
+	<string name="test_name">Hallo\'s Wereld</string>
+	<string name="android">de android!</string>
+	<string name="sign">&amp;&gt;&lt;</string>
+	<string name="line">c\nd</string>
 </resources>

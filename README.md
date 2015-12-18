@@ -1,20 +1,18 @@
 # transai
-[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai)
-[![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai)
+[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai) [![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai)
 
-transai is a command line tool to help you do Android and iOS translation management.
-You can extract string files to csv format, or generate string files from csv file for both Android, iOS and Mac.
+transai is a command line tool to help you do Android and iOS translation management. You can extract string files to csv format, or generate string files from csv file for both Android, iOS and Mac.
 
 ## Installation
-
 Just install it by npm:
 
-      $ sudo npm install transai -g
+```bash
+$ sudo npm install transai -g
+```
 
 ## Usage
 
 ```bash
-
 Usage:
   transai load [COMMAND]    # load string files
   transai save [COMMAND]    # save string files
@@ -31,32 +29,29 @@ Options:
   --to_ios                  # to which ios lang
   --to_android              # to which android lang
   -c, --csv                 # csv file
-
 ```
-### Example:
 
-`    $ transai load -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
+### Example:
+`$ transai load -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
 
 extract strings to strings.csv under ~/android and ~/ios folder
 
-`    $ transai load -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
+`$ transai load -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
 
 extract strings base on android default lang and ios en lang to android zh_tw lang and ios zh-Hant lang
 
-`    $ transai save -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
+`$ transai save -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
 
 generate string files from strings.csv under ~/android and ~/ios folder
 
-`    $ transai save -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
+`$ transai save -a ~/android -i ~/ios --from_android default --from_ios en --to_android zh_tw --to_ios zh-Hant -c ~/strings.csv`
 
 generate string files base on android default lang and ios en lang to android zh_tw lang and ios zh-Hant lang
 
 See `transai --help` or `transai <command> --help` for more information.
 
 ## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/Jintin/transai.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/Jintin/transai](https://github.com/Jintin/transai).
 
 ## License
-
 The module is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

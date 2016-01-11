@@ -23,7 +23,7 @@ function load(opts) {
   function getData(os, dir, from, to) {
     var fromData = os.getData(dir, from);
     var toData = os.getData(dir, to);
-    for (key in fromData) {
+    for (var key in fromData) {
       data[fromData[key]] = toData[key];
     }
   }

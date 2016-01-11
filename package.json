@@ -1,6 +1,6 @@
 {
   "name": "transai",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "transai is a localization tool on Android and iOS, convert string files to csv format back and forth.",
   "main": "index.js",
   "bin": "bin/transai",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/Jintin/transai/issues"
   },
-  "homepage": "https://github.com/Jintin/transai#readme",
+  "homepage": "https://github.com/Jintin/transai",
   "dependencies": {
     "nomnom": "^1.8.1",
     "xml2js": "^0.4.12"

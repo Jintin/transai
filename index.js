@@ -24,7 +24,9 @@ function load(opts) {
     var fromData = os.getData(dir, from);
     var toData = os.getData(dir, to);
     for (var key in fromData) {
-      data[fromData[key]] = toData[key];
+      if (fromData.hasOwnProperty(key)) {
+        data[fromData[key]] = toData[key];
+      }
     }
   }
 

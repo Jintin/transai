@@ -1,5 +1,9 @@
 # transai
-[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai) [![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai) [![Code Climate](https://codeclimate.com/github/Jintin/transai/badges/gpa.svg)](https://codeclimate.com/github/Jintin/transai)
+[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai)
+[![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai)
+[![Code Climate](https://codeclimate.com/github/Jintin/transai/badges/gpa.svg)](https://codeclimate.com/github/Jintin/transai)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/JStumpp/awesome-android)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
 transai is a command line tool to help you do Android and iOS translation management. You can extract string files to csv format, or generate string files from csv file for both Android, iOS and Mac.
 

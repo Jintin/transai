@@ -1,13 +1,11 @@
 # transai
-[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai)
-[![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai)
-[![Code Climate](https://codeclimate.com/github/Jintin/transai/badges/gpa.svg)](https://codeclimate.com/github/Jintin/transai)
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/JStumpp/awesome-android)
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
+
+[![npm version](https://badge.fury.io/js/transai.svg)](http://badge.fury.io/js/transai) [![Build Status](https://travis-ci.org/Jintin/transai.svg?branch=master)](https://travis-ci.org/Jintin/transai) [![Code Climate](https://codeclimate.com/github/Jintin/transai/badges/gpa.svg)](https://codeclimate.com/github/Jintin/transai) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/JStumpp/awesome-android) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
 transai is a command line tool to help you do Android and iOS translation management. You can extract string files to csv format, or generate string files from csv file for both Android, iOS and Mac.
 
 ## Installation
+
 Just install it by npm:
 
 ```bash
@@ -36,6 +34,7 @@ Options:
 ```
 
 ### Example:
+
 `$ transai load -a ~/android -i ~/ios --from en --to de -c ~/strings.csv`
 
 extract strings to strings.csv under ~/android and ~/ios folder
@@ -55,7 +54,9 @@ generate string files base on android default lang and ios en lang to android zh
 See `transai --help` or `transai <command> --help` for more information.
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [https://github.com/Jintin/transai](https://github.com/Jintin/transai).
+
+Bug reports and pull requests are welcome on GitHub at <https://github.com/Jintin/transai>.
 
 ## License
+
 The module is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

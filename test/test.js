@@ -13,24 +13,24 @@ compareFolder('./test/ios/de.lproj', './test/ios/xx.lproj');
 compare('./test/test.csv', './test/strings.csv');
 
 function puts(error, stdout, stderr) {
-  console.log(stdout);
-  console.log(stderr);
-  console.log(error);
+    console.log(stdout);
+    console.log(stderr);
+    console.log(error);
 }
 
 function compareFolder(path1, path2) {
-  fs.readdirSync(path1).forEach(function(file) {
-    var file1 = path1 + '/' + file;
-    var file2 = path2 + '/' + file;
-    compare(file1, file2);
-  });
+    fs.readdirSync(path1).forEach(function(file) {
+        var file1 = path1 + '/' + file;
+        var file2 = path2 + '/' + file;
+        compare(file1, file2);
+    });
 }
 
 function compare(file1, file2) {
-  var value1 = fs.readFileSync(file1).toString();
-  var value2 = fs.readFileSync(file2).toString();
+    var value1 = fs.readFileSync(file1).toString();
+    var value2 = fs.readFileSync(file2).toString();
 
-  console.log(value1);
-  console.log(value2);
-  assert.equal(value1, value2, 'result not equal');
+    console.log(value1);
+    console.log(value2);
+    assert.equal(value1, value2, 'result not equal');
 }

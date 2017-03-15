@@ -12,6 +12,10 @@ var command_opts = {
         abbr: 'a',
         help: 'android file path'
     },
+    web: {
+        abbr: 'w',
+        help: 'web file path'
+    },
     from: {
         abbr: 'f',
         help: 'from which lang (both ios & android)'
@@ -22,6 +26,9 @@ var command_opts = {
     from_android: {
         help: 'from which android lang'
     },
+    from_web: {
+        help: 'from which web lang'
+    },
     to: {
         abbr: 't',
         help: 'to which lang (both ios & android)'
@@ -31,6 +38,9 @@ var command_opts = {
     },
     to_ios: {
         help: 'to which ios lang'
+    },
+    to_web: {
+        help: 'to which web lang'
     },
     csv: {
         abbr: 'c',
@@ -75,13 +85,15 @@ function setLang(opts) {
     if (opts.from) {
         opts.from_android = opts.from;
         opts.from_ios = opts.from;
+        opts.from_web = opts.from;
     }
     if (opts.to) {
         opts.to_android = opts.to;
         opts.to_ios = opts.to;
+        opts.to_web = opts.to;
     }
     var error = false;
-    if (!opts.ios && !opts.android) {
+    if (!opts.ios && !opts.android && !opts.web) {
         error = true;
         console.error('os not specified');
     }

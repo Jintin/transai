@@ -2,6 +2,7 @@
 
 var ios = require('./lib/ios.js');
 var android = require('./lib/android.js');
+var web = require('./lib/web.js');
 var csv = require('./lib/csv.js');
 
 module.exports = {
@@ -19,6 +20,9 @@ function load(opts) {
     if (opts.android) {
         getData(android, opts.android, opts.from_android, opts.to_android);
     }
+    if (opts.web) {
+        getData(web, opts.web, opts.from_web, opts.to_web);
+    }
 
     function getData(os, dir, from, to) {
         var fromData = os.getData(dir, from);
@@ -35,7 +39,6 @@ function load(opts) {
         csv.save(opts.csv, data);
     } else {
         console.log(data);
-        console.log('csv file path not specified');
     }
 }
 
@@ -55,5 +58,8 @@ function save(opts) {
     }
     if (opts.android) {
         android.setData(data, opts.android, opts.from_android, opts.to_android);
+    }
+    if (opts.web) {
+        web.setData(data, opts.web, opts.from_web, opts.to_web);
     }
 }

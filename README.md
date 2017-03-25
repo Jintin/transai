@@ -24,12 +24,15 @@ Usage:
 Options:
   -i, --ios                 # ios file path
   -a, --android             # android file path
+  -w, --web                 # web json file path
   -f, --from                # from which lang (both ios & android)
   --from_ios                # from which ios lang
   --from_android            # from which android lang
+  --from_web                # from which web lang
   -t, --to                  # to which lang (both ios & android)
   --to_ios                  # to which ios lang
   --to_android              # to which android lang
+  --to_web                  # to which web lang
   -c, --csv                 # csv file
 ```
 

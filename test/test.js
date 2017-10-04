@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var sys = require('util');
-var fs = require('fs');
-var assert = require('assert');
-var execSync = require('child_process').execSync;
+var sys = require("util");
+var fs = require("fs");
+var assert = require("assert");
+var execSync = require("child_process").execSync;
 
 execSync("node bin/transai load -a . -i . -w . --from en --to de -c test/strings.csv", puts);
 execSync("node bin/transai save -a . -i . -w . --from en --to xx -c test/strings.csv", puts);

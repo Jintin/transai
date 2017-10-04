@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-var ios = require('./lib/ios.js');
-var android = require('./lib/android.js');
-var web = require('./lib/web.js');
-var csv = require('./lib/csv.js');
+var ios = require("./lib/ios.js");
+var android = require("./lib/android.js");
+var web = require("./lib/web.js");
+var csv = require("./lib/csv.js");
 
 function load(opts) {
     var data = {};
 
     function getData(os, dir, from, to) {
         if (!dir) {
-            return
+            return;
         }
         var fromData = os.getData(dir, from);
         var toData = os.getData(dir, to);
@@ -59,4 +59,4 @@ function save(opts) {
 module.exports = {
     load,
     save
-}
+};

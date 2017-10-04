@@ -2,4 +2,4 @@
 
 var execSync = require('child_process').execSync;
 
-execSync('npm publish');
+execSync("npm publish");

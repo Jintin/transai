@@ -5,26 +5,13 @@ var android = require('./lib/android.js');
 var web = require('./lib/web.js');
 var csv = require('./lib/csv.js');
 
-module.exports = {
-    load: load,
-    save: save
-}
-
 function load(opts) {
     var data = {};
 
-    //load
-    if (opts.ios) {
-        getData(ios, opts.ios, opts.from_ios, opts.to_ios);
-    }
-    if (opts.android) {
-        getData(android, opts.android, opts.from_android, opts.to_android);
-    }
-    if (opts.web) {
-        getData(web, opts.web, opts.from_web, opts.to_web);
-    }
-
     function getData(os, dir, from, to) {
+        if (!dir) {
+            return
+        }
         var fromData = os.getData(dir, from);
         var toData = os.getData(dir, to);
         for (var key in fromData) {
@@ -33,6 +20,11 @@ function load(opts) {
             }
         }
     }
+
+    //load
+    getData(ios, opts.ios, opts.from_ios, opts.to_ios);
+    getData(android, opts.android, opts.from_android, opts.to_android);
+    getData(web, opts.web, opts.from_web, opts.to_web);
 
     //save data
     if (opts.csv) {
@@ -62,4 +54,9 @@ function save(opts) {
     if (opts.web) {
         web.setData(data, opts.web, opts.from_web, opts.to_web);
     }
+}
+
+module.exports = {
+    load,
+    save
 }

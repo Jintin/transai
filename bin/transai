@@ -103,7 +103,7 @@ function setLang(opts) {
         }
         if (!opts.to_ios) {
             error = true;
-            console.error('ios to_lang not specified');
+            console.error('ios toLang not specified');
         }
     }
     if (opts.android) {
